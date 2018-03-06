@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery-3.1.0.min.js"></script>
+    <script src="20482.js"></script>
+    <title>2048游戏-wanderyun</title>
+    <style>
+        /*.infor{text-align: center;}*/
+        html,body{width: 100%;height: 100%;overflow: hidden;}
+        .infor-text{color:rgb(124, 115, 106);font-size: .8rem;width: 90%;margin: 20px auto;}
+        .infor-span{color: red;}
+    </style>
+</head>
+<body style="margin: 0;">
+    <div class="infor">
+        <p class="infor-text">1.pc.mobile均可<br>2.游戏规则：手指向4个方向均可滑动，相同数值且相邻才能合并<br>3.所有格子都有数值，游戏结束，分数为最大值<br><span class="infor-span">4.游戏虽然简单，但知识点非常多，尤其是学会如何用jquery扩展函数架构一个游戏框架(源码请联系我)</span></p>
+    </div>
+    <div id="game"></div>
+    <script>
+        $('#game').make2048({
+            width:6,
+            height:6
+        });
+        $(document).on("touchmove",function(e){
+            if(e.target.id !="dame"){
+                e.preventDefault();
+            }
+        })
+    </script>
+</body>
+</html>
